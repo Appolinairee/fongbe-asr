@@ -1,122 +1,78 @@
-# 🗣️ ASR Fongbe - Automatic Speech Recognition
+# Fongbe ASR
 
-**Finetuning Whisper pour la langue fongbe (Bénin)**
+Automatic Speech Recognition system for Fongbe (Benin) using parameter-efficient fine-tuning of Whisper with LoRA.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
----
+## Overview
 
-## 📊 Dataset
+This repository contains code and documentation for fine-tuning OpenAI's Whisper model on Fongbe speech data using Low-Rank Adaptation (LoRA). The project investigates optimal parameter-efficient fine-tuning strategies for low-resource African languages.
 
-- **13,581 samples** audio + transcription fongbe
-- **12.22h** audio total
-- Sources: Laleye Zenodo + pyFongbe
-- Splits: 80% train / 10% val / 10% test
+**Dataset:** 13,581 audio-transcription pairs (12.22 hours total)  
+**Sources:** Laleye et al. (Zenodo) + pyFongbe corpus  
+**Split:** 80% train / 10% validation / 10% test
 
-## 🚀 Quick Start
+## Quick Start
 
-### Local (si GPU)
+### Local Training
+
 ```bash
-git clone https://github.com/TON_USER/fongbe.git
-cd fongbe
-python -m venv .venv
-source .venv/bin/activate
+git clone https://github.com/Appolinairee/fongbe-asr.git
+cd fongbe-asr
+python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 python scripts/finetune_whisper.py
 ```
 
-### Google Colab (GPU gratuit)
-```python
-# Dans Colab
-!git clone https://github.com/TON_USER/fongbe.git
-%cd fongbe
+### Google Colab
 
-# Monter Drive (dataset)
-from google.colab import drive
-drive.mount('/content/drive')
-!cp -r /content/drive/MyDrive/fongbe_data data/processed/
+Use the provided `colab_training.ipynb` notebook for GPU-accelerated training with automatic GitHub/Drive synchronization.
 
-# Run training
-!python scripts/finetune_whisper.py
-```
+See `WORKFLOW.md` for detailed setup instructions.
 
-**OU** utiliser notebook: `colab_training.ipynb`
-
----
-
-## 📁 Structure
+## Repository Structure
 
 ```
-fongbe/
-├── data/
-│   └── processed/fongbe_asr_unified/  # Dataset (à télécharger)
+fongbe-asr/
 ├── scripts/
-│   ├── finetune_whisper.py           # Training principal
-│   ├── experiment_lora_ranks.py      # Expériences recherche
-│   └── prepare_dataset_hf.py         # Data preprocessing
-├── skills/                            # AI research skills
-├── colab_training.ipynb               # Notebook Colab
-└── TRAINING_GUIDE.md                  # Documentation
+│   ├── finetune_whisper.py          # Main training script
+│   ├── experiment_lora_ranks.py     # LoRA rank ablation study
+│   └── prepare_dataset_hf.py        # Dataset preprocessing
+├── colab_training.ipynb             # Colab notebook with sync
+├── TRAINING_GUIDE.md                # Training documentation
+└── WORKFLOW.md                      # Development workflow guide
 ```
 
----
+## Research Questions
 
-## 🔬 Recherche
+1. What is the optimal LoRA rank for Fongbe ASR? (r ∈ {2, 4, 8, 16, 32, 64})
+2. Which Whisper modules benefit most from fine-tuning? (encoder vs decoder)
+3. What performance is achievable with limited labeled data?
 
-**Questions explorées :**
-1. Optimal LoRA rank (r ∈ {2,4,8,16,32,64})
-2. Target modules (encoder vs decoder)
-3. Few-shot learning (faibles ressources)
+## Expected Results
 
-Voir `TRAINING_GUIDE.md` pour détails.
+- Baseline WER: 20-40%
+- Training time: 3-6 hours (T4 GPU)
+- Model size: ~10MB (LoRA adapters only)
 
----
-
-## 🎯 Résultats attendus
-
-- **Baseline WER**: 20-40%
-- **Training time**: 3-6h (GPU T4)
-- **Modèle final**: ~10MB (LoRA adapters)
-
----
-
-## 📦 Dataset Download
-
-**Option 1: Google Drive**
-```bash
-# Depuis projet GitHub
-rclone copy gdrive:fongbe_data data/processed/fongbe_asr_unified
-```
-
-**Option 2: HuggingFace** (si publié)
-```python
-from datasets import load_dataset
-dataset = load_dataset("TON_USER/fongbe-asr")
-```
-
----
-
-## 📚 Citation
+## Citation
 
 ```bibtex
 @misc{fongbe-asr-2026,
-  title={Fongbe Automatic Speech Recognition with Low-Resource Fine-tuning},
-  author={Votre Nom},
+  title={Parameter-Efficient Fine-Tuning of Whisper for Fongbe ASR},
+  author={Your Name},
   year={2026},
-  url={https://github.com/TON_USER/fongbe}
+  publisher={GitHub},
+  url={https://github.com/Appolinairee/fongbe-asr}
 }
 ```
 
----
+## Acknowledgments
 
-## 📝 License
+- Laleye et al. dataset: [DOI:10.5281/zenodo.6604637](https://doi.org/10.5281/zenodo.6604637)
+- pyFongbe corpus: [github.com/laleye/pyFongbe](https://github.com/laleye/pyFongbe)
+- Whisper: [github.com/openai/whisper](https://github.com/openai/whisper)
 
-MIT License - voir [LICENSE](LICENSE)
+## License
 
----
-
-## 🤝 Acknowledgments
-
-- Dataset Laleye: [Zenodo](https://doi.org/10.5281/zenodo.6604637)
-- pyFongbe: [GitHub](https://github.com/laleye/pyFongbe)
-- Whisper: [OpenAI](https://github.com/openai/whisper)
+MIT License - see [LICENSE](LICENSE) for details.
