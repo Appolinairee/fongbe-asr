@@ -1,0 +1,257 @@
+package androidx.recyclerview;
+
+public final class R {
+
+    public static final class attr {
+        public static int alpha = 2130903090;
+        public static int coordinatorLayoutStyle = 2130903196;
+        public static int fastScrollEnabled = 2130903260;
+        public static int fastScrollHorizontalThumbDrawable = 2130903261;
+        public static int fastScrollHorizontalTrackDrawable = 2130903262;
+        public static int fastScrollVerticalThumbDrawable = 2130903263;
+        public static int fastScrollVerticalTrackDrawable = 2130903264;
+        public static int font = 2130903288;
+        public static int fontProviderAuthority = 2130903290;
+        public static int fontProviderCerts = 2130903291;
+        public static int fontProviderFetchStrategy = 2130903292;
+        public static int fontProviderFetchTimeout = 2130903293;
+        public static int fontProviderPackage = 2130903294;
+        public static int fontProviderQuery = 2130903295;
+        public static int fontStyle = 2130903297;
+        public static int fontVariationSettings = 2130903298;
+        public static int fontWeight = 2130903299;
+        public static int keylines = 2130903332;
+        public static int layoutManager = 2130903338;
+        public static int layout_anchor = 2130903339;
+        public static int layout_anchorGravity = 2130903340;
+        public static int layout_behavior = 2130903341;
+        public static int layout_dodgeInsetEdges = 2130903388;
+        public static int layout_insetEdge = 2130903398;
+        public static int layout_keyline = 2130903399;
+        public static int reverseLayout = 2130903530;
+        public static int spanCount = 2130903560;
+        public static int stackFromEnd = 2130903578;
+        public static int statusBarBackground = 2130903581;
+        public static int ttcIndex = 2130903671;
+
+        private attr() {
+        }
+    }
+
+    public static final class color {
+        public static int notification_action_color_filter = 2131034202;
+        public static int notification_icon_bg_color = 2131034203;
+        public static int ripple_material_light = 2131034214;
+        public static int secondary_text_default_material_light = 2131034216;
+
+        private color() {
+        }
+    }
+
+    public static final class dimen {
+        public static int compat_button_inset_horizontal_material = 2131099728;
+        public static int compat_button_inset_vertical_material = 2131099729;
+        public static int compat_button_padding_horizontal_material = 2131099730;
+        public static int compat_button_padding_vertical_material = 2131099731;
+        public static int compat_control_corner_material = 2131099732;
+        public static int compat_notification_large_icon_max_height = 2131099733;
+        public static int compat_notification_large_icon_max_width = 2131099734;
+        public static int fastscroll_default_thickness = 2131099737;
+        public static int fastscroll_margin = 2131099738;
+        public static int fastscroll_minimum_range = 2131099739;
+        public static int item_touch_helper_max_drag_scroll_per_frame = 2131099765;
+        public static int item_touch_helper_swipe_escape_max_velocity = 2131099766;
+        public static int item_touch_helper_swipe_escape_velocity = 2131099767;
+        public static int notification_action_icon_size = 2131099768;
+        public static int notification_action_text_size = 2131099769;
+        public static int notification_big_circle_margin = 2131099770;
+        public static int notification_content_margin_start = 2131099771;
+        public static int notification_large_icon_height = 2131099772;
+        public static int notification_large_icon_width = 2131099773;
+        public static int notification_main_column_padding_top = 2131099774;
+        public static int notification_media_narrow_margin = 2131099775;
+        public static int notification_right_icon_size = 2131099776;
+        public static int notification_right_side_padding_top = 2131099777;
+        public static int notification_small_icon_background_padding = 2131099778;
+        public static int notification_small_icon_size_as_large = 2131099779;
+        public static int notification_subtext_size = 2131099780;
+        public static int notification_top_pad = 2131099781;
+        public static int notification_top_pad_large_text = 2131099782;
+
+        private dimen() {
+        }
+    }
+
+    public static final class drawable {
+        public static int notification_action_background = 2131165312;
+        public static int notification_bg = 2131165313;
+        public static int notification_bg_low = 2131165314;
+        public static int notification_bg_low_normal = 2131165315;
+        public static int notification_bg_low_pressed = 2131165316;
+        public static int notification_bg_normal = 2131165317;
+        public static int notification_bg_normal_pressed = 2131165318;
+        public static int notification_icon_background = 2131165319;
+        public static int notification_template_icon_bg = 2131165321;
+        public static int notification_template_icon_low_bg = 2131165322;
+        public static int notification_tile_bg = 2131165323;
+        public static int notify_panel_notification_icon_bg = 2131165324;
+
+        private drawable() {
+        }
+    }
+
+    public static final class id {
+        public static int action_container = 2131230774;
+        public static int action_divider = 2131230776;
+        public static int action_image = 2131230777;
+        public static int action_text = 2131230783;
+        public static int actions = 2131230784;
+        public static int async = 2131230804;
+        public static int blocking = 2131230815;
+        public static int bottom = 2131230817;
+        public static int chronometer = 2131230840;
+        public static int end = 2131230883;
+        public static int forever = 2131230890;
+        public static int icon = 2131230907;
+        public static int icon_group = 2131230909;
+        public static int info = 2131230917;
+        public static int italic = 2131230919;
+        public static int item_touch_helper_previous_elevation = 2131230920;
+        public static int left = 2131230924;
+        public static int line1 = 2131230927;
+        public static int line3 = 2131230928;
+        public static int none = 2131230946;
+        public static int normal = 2131230947;
+        public static int notification_background = 2131230949;
+        public static int notification_main_column = 2131230950;
+        public static int notification_main_column_container = 2131230951;
+        public static int right = 2131230982;
+        public static int right_icon = 2131230983;
+        public static int right_side = 2131230984;
+        public static int start = 2131231030;
+        public static int tag_transition_group = 2131231050;
+        public static int tag_unhandled_key_event_manager = 2131231051;
+        public static int tag_unhandled_key_listeners = 2131231052;
+        public static int text = 2131231056;
+        public static int text2 = 2131231057;
+        public static int time = 2131231060;
+        public static int title = 2131231061;
+        public static int top = 2131231065;
+
+        private id() {
+        }
+    }
+
+    public static final class integer {
+        public static int status_bar_notification_info_maxnum = 2131296263;
+
+        private integer() {
+        }
+    }
+
+    public static final class layout {
+        public static int notification_action = 2131427367;
+        public static int notification_action_tombstone = 2131427368;
+        public static int notification_template_custom_big = 2131427369;
+        public static int notification_template_icon_group = 2131427370;
+        public static int notification_template_part_chronometer = 2131427371;
+        public static int notification_template_part_time = 2131427372;
+
+        private layout() {
+        }
+    }
+
+    public static final class string {
+        public static int status_bar_notification_info_overflow = 2131558483;
+
+        private string() {
+        }
+    }
+
+    public static final class style {
+        public static int TextAppearance_Compat_Notification = 2131624206;
+        public static int TextAppearance_Compat_Notification_Info = 2131624207;
+        public static int TextAppearance_Compat_Notification_Line2 = 2131624208;
+        public static int TextAppearance_Compat_Notification_Time = 2131624209;
+        public static int TextAppearance_Compat_Notification_Title = 2131624210;
+        public static int Widget_Compat_NotificationActionContainer = 2131624319;
+        public static int Widget_Compat_NotificationActionText = 2131624320;
+        public static int Widget_Support_CoordinatorLayout = 2131624321;
+
+        private style() {
+        }
+    }
+
+    public static final class styleable {
+        public static int[] ColorStateListItem = {16843173, 16843551, 16844359, com.tes.flutter_app.R.attr.alpha, com.tes.flutter_app.R.attr.lStar};
+        public static int ColorStateListItem_alpha = 3;
+        public static int ColorStateListItem_android_alpha = 1;
+        public static int ColorStateListItem_android_color = 0;
+        public static int ColorStateListItem_android_lStar = 2;
+        public static int ColorStateListItem_lStar = 4;
+        public static int[] CoordinatorLayout = {com.tes.flutter_app.R.attr.keylines, com.tes.flutter_app.R.attr.statusBarBackground};
+        public static int[] CoordinatorLayout_Layout = {16842931, com.tes.flutter_app.R.attr.layout_anchor, com.tes.flutter_app.R.attr.layout_anchorGravity, com.tes.flutter_app.R.attr.layout_behavior, com.tes.flutter_app.R.attr.layout_dodgeInsetEdges, com.tes.flutter_app.R.attr.layout_insetEdge, com.tes.flutter_app.R.attr.layout_keyline};
+        public static int CoordinatorLayout_Layout_android_layout_gravity = 0;
+        public static int CoordinatorLayout_Layout_layout_anchor = 1;
+        public static int CoordinatorLayout_Layout_layout_anchorGravity = 2;
+        public static int CoordinatorLayout_Layout_layout_behavior = 3;
+        public static int CoordinatorLayout_Layout_layout_dodgeInsetEdges = 4;
+        public static int CoordinatorLayout_Layout_layout_insetEdge = 5;
+        public static int CoordinatorLayout_Layout_layout_keyline = 6;
+        public static int CoordinatorLayout_keylines = 0;
+        public static int CoordinatorLayout_statusBarBackground = 1;
+        public static int[] FontFamily = {com.tes.flutter_app.R.attr.fontProviderAuthority, com.tes.flutter_app.R.attr.fontProviderCerts, com.tes.flutter_app.R.attr.fontProviderFetchStrategy, com.tes.flutter_app.R.attr.fontProviderFetchTimeout, com.tes.flutter_app.R.attr.fontProviderPackage, com.tes.flutter_app.R.attr.fontProviderQuery, com.tes.flutter_app.R.attr.fontProviderSystemFontFamily};
+        public static int[] FontFamilyFont = {16844082, 16844083, 16844095, 16844143, 16844144, com.tes.flutter_app.R.attr.font, com.tes.flutter_app.R.attr.fontStyle, com.tes.flutter_app.R.attr.fontVariationSettings, com.tes.flutter_app.R.attr.fontWeight, com.tes.flutter_app.R.attr.ttcIndex};
+        public static int FontFamilyFont_android_font = 0;
+        public static int FontFamilyFont_android_fontStyle = 2;
+        public static int FontFamilyFont_android_fontVariationSettings = 4;
+        public static int FontFamilyFont_android_fontWeight = 1;
+        public static int FontFamilyFont_android_ttcIndex = 3;
+        public static int FontFamilyFont_font = 5;
+        public static int FontFamilyFont_fontStyle = 6;
+        public static int FontFamilyFont_fontVariationSettings = 7;
+        public static int FontFamilyFont_fontWeight = 8;
+        public static int FontFamilyFont_ttcIndex = 9;
+        public static int FontFamily_fontProviderAuthority = 0;
+        public static int FontFamily_fontProviderCerts = 1;
+        public static int FontFamily_fontProviderFetchStrategy = 2;
+        public static int FontFamily_fontProviderFetchTimeout = 3;
+        public static int FontFamily_fontProviderPackage = 4;
+        public static int FontFamily_fontProviderQuery = 5;
+        public static int FontFamily_fontProviderSystemFontFamily = 6;
+        public static int[] GradientColor = {16843165, 16843166, 16843169, 16843170, 16843171, 16843172, 16843265, 16843275, 16844048, 16844049, 16844050, 16844051};
+        public static int[] GradientColorItem = {16843173, 16844052};
+        public static int GradientColorItem_android_color = 0;
+        public static int GradientColorItem_android_offset = 1;
+        public static int GradientColor_android_centerColor = 7;
+        public static int GradientColor_android_centerX = 3;
+        public static int GradientColor_android_centerY = 4;
+        public static int GradientColor_android_endColor = 1;
+        public static int GradientColor_android_endX = 10;
+        public static int GradientColor_android_endY = 11;
+        public static int GradientColor_android_gradientRadius = 5;
+        public static int GradientColor_android_startColor = 0;
+        public static int GradientColor_android_startX = 8;
+        public static int GradientColor_android_startY = 9;
+        public static int GradientColor_android_tileMode = 6;
+        public static int GradientColor_android_type = 2;
+        public static int[] RecyclerView = {16842948, 16842993, com.tes.flutter_app.R.attr.fastScrollEnabled, com.tes.flutter_app.R.attr.fastScrollHorizontalThumbDrawable, com.tes.flutter_app.R.attr.fastScrollHorizontalTrackDrawable, com.tes.flutter_app.R.attr.fastScrollVerticalThumbDrawable, com.tes.flutter_app.R.attr.fastScrollVerticalTrackDrawable, com.tes.flutter_app.R.attr.layoutManager, com.tes.flutter_app.R.attr.reverseLayout, com.tes.flutter_app.R.attr.spanCount, com.tes.flutter_app.R.attr.stackFromEnd};
+        public static int RecyclerView_android_descendantFocusability = 1;
+        public static int RecyclerView_android_orientation = 0;
+        public static int RecyclerView_fastScrollEnabled = 2;
+        public static int RecyclerView_fastScrollHorizontalThumbDrawable = 3;
+        public static int RecyclerView_fastScrollHorizontalTrackDrawable = 4;
+        public static int RecyclerView_fastScrollVerticalThumbDrawable = 5;
+        public static int RecyclerView_fastScrollVerticalTrackDrawable = 6;
+        public static int RecyclerView_layoutManager = 7;
+        public static int RecyclerView_reverseLayout = 8;
+        public static int RecyclerView_spanCount = 9;
+        public static int RecyclerView_stackFromEnd = 10;
+
+        private styleable() {
+        }
+    }
+
+    private R() {
+    }
+}

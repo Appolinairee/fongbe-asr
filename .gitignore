@@ -1,4 +1,48 @@
-/academic-ressources/
-/apps/
-/collecte/
-/textes/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+
+# Data (trop gros pour git)
+data/raw/
+data/processed/
+collecte/
+
+# Outputs
+outputs/
+experiments/
+*.log
+runs/
+
+# Models & Checkpoints
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Keep structure
+!data/.gitkeep
+!outputs/.gitkeep
