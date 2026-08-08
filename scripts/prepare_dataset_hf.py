@@ -5,18 +5,23 @@ Création dataset ASR fongbe pour finetuning Whisper
 """
 
 from pathlib import Path
+import os
 from datasets import Dataset, DatasetDict, Audio
 from tqdm import tqdm
 import pandas as pd
+
+
+RAW_DATA_DIR = Path(os.getenv("RAW_DATA_DIR", "data/raw"))
+OUTPUT_DATASET_PATH = os.getenv("DATASET_PATH", "data/processed/fongbe_asr_unified")
 
 def load_laleye():
     """Charge dataset Laleye"""
     print("📦 Chargement Laleye...")
     
-    base = Path("data/raw/Fongbe_Speech_Dataset/fongbe_speech_audio_files")
+    base = RAW_DATA_DIR / "Fongbe_Speech_Dataset/fongbe_speech_audio_files"
     wav_dir = base / "wav"
     txt_dir = base / "lab"
-    metadata = pd.read_csv("data/raw/Fongbe_Speech_Dataset/fongbe_speech_dataset_metadata.csv")
+    metadata = pd.read_csv(RAW_DATA_DIR / "Fongbe_Speech_Dataset/fongbe_speech_dataset_metadata.csv")
     
     data = []
     for wav_file in tqdm(list(wav_dir.glob("*.wav"))):
@@ -46,7 +51,7 @@ def load_pyfongbe():
     """Charge dataset pyFongbe"""
     print("\n📦 Chargement pyFongbe...")
     
-    base = Path("data/raw/pyFongbe/data")
+    base = RAW_DATA_DIR / "pyFongbe/data"
     
     data = []
     
@@ -129,7 +134,7 @@ def create_unified_dataset():
     print(f"   Test: {len(dataset_dict['test'])} samples")
     
     # Sauvegarder
-    output_dir = "data/processed/fongbe_asr_unified"
+    output_dir = OUTPUT_DATASET_PATH
     print(f"\n💾 Sauvegarde dans {output_dir}...")
     dataset_dict.save_to_disk(output_dir)
     

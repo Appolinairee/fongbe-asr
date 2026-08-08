@@ -21,6 +21,8 @@ git clone https://github.com/Appolinairee/fongbe-asr.git
 cd fongbe-asr
 python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
+python scripts/download_sources_to_drive.py --dest data/raw
+python scripts/prepare_dataset_hf.py
 python scripts/finetune_whisper.py
 ```
 
@@ -28,7 +30,16 @@ python scripts/finetune_whisper.py
 
 Use the provided `colab_training.ipynb` notebook for GPU-accelerated training with automatic GitHub/Drive synchronization.
 
+Use `scripts/download_sources_to_drive.py` to download the public source datasets directly into Google Drive or `data/raw`.
+
 See `WORKFLOW.md` for detailed setup instructions.
+
+### Download Sources
+
+```bash
+source .venv/bin/activate
+python scripts/download_sources_to_drive.py --dest /content/drive/MyDrive/fongbe/data/raw
+```
 
 ## Repository Structure
 
@@ -37,8 +48,10 @@ fongbe-asr/
 ├── scripts/
 │   ├── finetune_whisper.py          # Main training script
 │   ├── experiment_lora_ranks.py     # LoRA rank ablation study
+│   ├── download_sources_to_drive.py # Download public datasets to Drive/local
 │   └── prepare_dataset_hf.py        # Dataset preprocessing
 ├── colab_training.ipynb             # Colab notebook with sync
+├── DATA_SOURCES.md                  # Verified dataset links and notes
 ├── TRAINING_GUIDE.md                # Training documentation
 └── WORKFLOW.md                      # Development workflow guide
 ```
@@ -71,6 +84,7 @@ fongbe-asr/
 
 - Laleye et al. dataset: [DOI:10.5281/zenodo.6604637](https://doi.org/10.5281/zenodo.6604637)
 - pyFongbe corpus: [github.com/laleye/pyFongbe](https://github.com/laleye/pyFongbe)
+- Data source notes: [DATA_SOURCES.md](DATA_SOURCES.md)
 - Whisper: [github.com/openai/whisper](https://github.com/openai/whisper)
 
 ## License

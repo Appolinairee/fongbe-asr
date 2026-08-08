@@ -5,8 +5,9 @@ Approche recherche : expérimentations sur rank, target modules, etc.
 """
 
 import os
+import sys
+from pathlib import Path
 import torch
-from datasets import load_from_disk, Audio
 from transformers import (
     WhisperProcessor,
     WhisperForConditionalGeneration,
@@ -18,9 +19,15 @@ import evaluate
 from dataclasses import dataclass
 from typing import Any, Dict, List, Union
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+
+from fongbe_asr.hf_dataset import load_fongbe_dataset, normalize_audio_column
+
 # Configuration
 MODEL_NAME = "openai/whisper-small"  # 244M params
 DATASET_PATH = os.getenv("DATASET_PATH", "data/processed/fongbe_asr_unified")
+HF_DATASET_ID = os.getenv("HF_DATASET_ID", "").strip()
+HF_DATASET_CACHE_DIR = os.getenv("HF_DATASET_CACHE_DIR", "").strip() or None
 OUTPUT_DIR = os.getenv("OUTPUT_DIR", "outputs/whisper-fongbe-lora")
 
 # Hyperparamètres LoRA (à expérimenter)
@@ -42,11 +49,8 @@ print("="*60)
 
 # 1. Charger dataset
 print("\n📦 Chargement dataset...")
-dataset = load_from_disk(DATASET_PATH)
-
-# Convertir audio_path en Audio feature
-dataset = dataset.cast_column("audio_path", Audio(sampling_rate=16000))
-dataset = dataset.rename_column("audio_path", "audio")
+dataset = load_fongbe_dataset(DATASET_PATH, HF_DATASET_ID, HF_DATASET_CACHE_DIR)
+dataset = normalize_audio_column(dataset)
 
 print(f"✅ Dataset chargé:")
 print(f"   Train: {len(dataset['train'])} samples")
@@ -91,8 +95,8 @@ class DataCollatorSpeechSeq2SeqWithPadding:
     processor: Any
 
     def __call__(self, features: List[Dict[str, Union[List[int], torch.Tensor]]]) -> Dict[str, torch.Tensor]:
-        # Extraire audio
-        input_features = [{"input_features": feature["audio"]["array"]} for feature in features]
+        # Padding des features audio déjà extraites par prepare_dataset()
+        input_features = [{"input_features": feature["input_features"]} for feature in features]
         batch = self.processor.feature_extractor.pad(input_features, return_tensors="pt")
 
         # Extraire texte (labels)

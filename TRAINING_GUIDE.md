@@ -29,6 +29,16 @@ python scripts/experiment_lora_ranks.py
 
 ---
 
+### 3. `download_sources_to_drive.py` - Telechargement sources
+
+```bash
+python scripts/download_sources_to_drive.py --dest /content/drive/MyDrive/fongbe/data/raw
+```
+
+Le script telecharge les sources publiques referencees dans `DATA_SOURCES.md`.
+
+---
+
 ## Questions de recherche
 
 ### ✅ Implémentées
@@ -66,12 +76,15 @@ python scripts/experiment_lora_ranks.py
 ### Prérequis
 - GPU 12GB+ VRAM (recommandé)
 - Python 3.8+
-- Dataset préparé : `data/processed/fongbe_asr_unified/`
+- Sources telechargees dans `data/raw/`
+- Dataset préparé localement : `data/processed/fongbe_asr_unified/`
 
 ### Commande
 ```bash
 cd /home/appolinaire/Projects/fongbe
 source .venv/bin/activate
+python scripts/download_sources_to_drive.py --dest data/raw
+python scripts/prepare_dataset_hf.py
 python scripts/finetune_whisper.py
 ```
 
