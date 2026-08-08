@@ -20,8 +20,8 @@ from typing import Any, Dict, List, Union
 
 # Configuration
 MODEL_NAME = "openai/whisper-small"  # 244M params
-DATASET_PATH = "data/processed/fongbe_asr_unified"
-OUTPUT_DIR = "outputs/whisper-fongbe-lora"
+DATASET_PATH = os.getenv("DATASET_PATH", "data/processed/fongbe_asr_unified")
+OUTPUT_DIR = os.getenv("OUTPUT_DIR", "outputs/whisper-fongbe-lora")
 
 # Hyperparamètres LoRA (à expérimenter)
 LORA_CONFIG = {
